@@ -1,12 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
 
+
 def add_didjet(didjet):
     value = answer.get()
     if value[0] == '0' and len(value) == 1:
         value = value[1:]
     answer.delete(0, tk.END)
     answer.insert(0, value+didjet)
+
 def add_operation(operation):
     value = answer.get()
     if value[-1] in '-+*/':
@@ -16,12 +18,14 @@ def add_operation(operation):
         value = answer.get()
     answer.delete(0, tk.END)
     answer.insert(0, value+operation)
+
 def calculate():
     value = answer.get()
     if value[-1] in '+-/*':
         operation = value[-1]
         value = value+value[:-1]
     answer.delete(0, tk.END)
+
     try:
         answer.insert(0, eval(value))
     except (NameError , SyntaxError):
@@ -34,6 +38,7 @@ def calculate():
 def cleare():
     answer.delete(0, tk.END)
     answer.insert(0, 0)
+
 def make_button(didjet):
     return tk.Button(window, text=didjet, bd=5, font=('Arial', 13), command=lambda: add_didjet(didjet))
 
