@@ -11,7 +11,7 @@ MARGIN_SIZE = 10
 BLOCK_COUNT_X = 4
 BLOCK_COUNT_Y = 4
 FINISH_POWER = 11
-IMAGE_FOLDER = 'fish' #numbers
+IMAGE_FOLDER = 'numbers' #fish
 
 class Block:
     def __init__(self, x, y):
